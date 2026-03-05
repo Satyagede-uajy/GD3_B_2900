@@ -17,28 +17,28 @@
         <br>
         <div class="file-row">
             <label>Pilih gambar:</label>
-            <input type="file" id="filebg" accept="image/*">
+            <input type="file" id="filebg" accept="url">
         </div>
     </div>
 
     <script>
-        var txtColor = document.getElementById("textColor");
+        var txtColor = document.getElementById(" textColor ");
 
-        txtColor.addEventListener("input", function() {
+        txtColor.addEventListener("input ", function() {
             document.body.style.color = txtColor.value;
         });
 
-        var filebg = document.getElementById("filebg"); // Penyesuaian variabel agar sesuai id
+        var filebg = document.getElementById("filebg ");
 
-        filebg.addEventListener("change", (event) => {
+        filebg.addEventListener("change ", (event) => {
             var doc = event.target.files[0];
             if (doc) {
                 var file = new FileReader();
                 file.onload = function(e) {
                     document.body.style.backgroundImage = `url('${e.target.result}')`;
-                    document.body.style.backgroundSize = "cover";
-                    document.body.style.backgroundRepeat = "no-repeat";
-                    document.body.style.backgroundPosition = "center";
+                    document.body.style.backgroundSize = "cover ";
+                    document.body.style.backgroundRepeat = "no-repeat ";
+                    document.body.style.backgroundPosition = "center ";
                 };
                 file.readAsDataURL(doc);
             }
